@@ -1,3 +1,5 @@
+# DEMO: http://adrianmui.me/TinyMCEAngular/
+
 ## mini-feature "Xeditable but with Tinymce" for other app, Anglify Bootstrap
 
 As a logged-in User
