@@ -16,9 +16,15 @@ myAppModule.controller('TinyMceController',
     var id;
     console.log("prev id is: ", $scope.previousId);
       if($scope.previousId) {
+
         if (!event.target.id) {
-          id = angular.element(event.target).parent()[0].id;
-          $scope.previousId = id;
+          //*incase of nested 
+          if (angular.element(event.target).parent()[0].id.length === 0) {
+            id = angular.element(event.target).parent().parent()[0].id;
+          }  else {
+            id = angular.element(event.target).parent()[0].id;
+            $scope.previousId = id;
+          }
         } else {
           id = event.target.id;
           $scope.previousId = id;
