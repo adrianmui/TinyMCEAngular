@@ -1,0 +1,20 @@
+{
+  "name": "adrian",
+  "authors": [
+    "Adrian Mui <adrian.mui@gmail.com>"
+  ],
+  "description": "angulartinymce",
+  "main": "main",
+  "license": "MIT",
+  "homepage": "adrianmui.me",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular-ui-tinymce": "^0.0.17"
+  }
+}

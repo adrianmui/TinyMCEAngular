@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/css/mdb.min.css'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.1.1/js/mdb.min.js'>
+
+    <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+
+    <!-- Requires tinymce.js, angular.js, and angular-ui-tinymce.js -->
+    <script type="text/javascript" src="bower_components/tinymce/tinymce.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+    <!-- Angular module + controller -->
+    <script type="text/javascript" src="app.js"></script>
+   
+  </head>
+  <body ng-controller="TinyMceController">
+      <div class="container-fluid" style="border: 1px dotted black">
+
+      <!-- don't really need the ng-clicks -->
+        <div  ng-click="yes($event)"> 
+          <p id="1" class="textable"> Example Text 1</p>
+        </div>
+        <div  ng-click="yes($event)"> 
+          <h1  id="2" class="textable"> Example Text 2 </h1>
+        </div>
+        <div  ng-click="yes($event)">
+          <h2 id="3" class="textable"> Example Text 3 </h2>
+        </div>
+        <div  ng-click="yes($event)"> 
+          <h3  id="4" class="textable"> Example Text 4 </h3>
+        </div>
+      </div>
+    
+
+      <!-- custom directive is another way to use tinymce but not necessary.
+      <div ui-tinymce="tinymceOptions" ng-model="tinymceModel" id="mce"></div>
+      <button ng-click="getContent()"" class="btn btn-danger">LogContent</button>
+      <button ng-click="setContent()" class="btn btn-success ">Button</button>
+      <button ng-click="addImage()" class="btn btn-info ">Image</button>
+      <button ng-click="toggleMce()" class="btn btn-warning ">AddToPage</button> -->
+    
+  </body>
+</html>
