@@ -13,17 +13,21 @@ myAppModule.controller('TinyMceController',
       clicking a box, exiting, and reclicking it should still target the same div.
       clicking another box should successfully target the other box.
     */
+    var id;
+    console.log("prev id is: ", $scope.previousId);
       if($scope.previousId) {
-        if (event.target.id && $scope.previousId != event.target.id) {
-          var id = event.target.id;
+        if (!event.target.id) {
+          id = angular.element(event.target).parent()[0].id;
           $scope.previousId = id;
         } else {
-          var id = $scope.previousId;
+          id = event.target.id;
+          $scope.previousId = id;
         }
       } else {
-        var id = event.target.id;
+        id = event.target.id;
         $scope.previousId = id;
       }
+    console.log("curr id is: ", $scope.previousId);
 
       tinymce.init({
         selector: ('#' + id),
