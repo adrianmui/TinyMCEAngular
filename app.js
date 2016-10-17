@@ -16,19 +16,27 @@ myAppModule.controller('TinyMceController',
     var id;
     console.log("prev id is: ", $scope.previousId);
       if($scope.previousId) {
-
-        if (!event.target.id) {
-          //*incase of nested 
-          if (angular.element(event.target).parent()[0].id.length === 0) {
-            id = angular.element(event.target).parent().parent()[0].id;
-          }  else {
-            id = angular.element(event.target).parent()[0].id;
-            $scope.previousId = id;
-          }
-        } else {
-          id = event.target.id;
-          $scope.previousId = id;
+        var nested_targ = event.target;
+        while (!nested_targ.class && (nested_targ.class !== "textable" )) {
+          if (nested_targ.id) {
+            id = nested_targ.id;
+            break;
+          } 
+          nested_targ = angular.element(nested_targ).parent()[0];
         }
+        // if (!event.target.id) {
+
+        //   //*incase of nested 
+        //   if (angular.element(event.target).parent()[0].id.length === 0) {
+        //     id = angular.element(event.target).parent().parent()[0].id;
+        //   }  else {
+        //     id = angular.element(event.target).parent()[0].id;
+        //     $scope.previousId = id;
+        //   }
+        // } else {
+        //   id = event.target.id;
+        //   $scope.previousId = id;
+        // }
       } else {
         id = event.target.id;
         $scope.previousId = id;
